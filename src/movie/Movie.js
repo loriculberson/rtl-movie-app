@@ -7,7 +7,6 @@ import Overdrive from 'react-overdrive';
 const POSTER_PATH = 'http://image.tmdb.org/t/p/w154';
 
 const Movie = ({ movie }) => {
-  console.log('movie!!!', movie)
   return ( 
   <Link to={`/${movie.id}`}>
     <Overdrive id={`${movie.id}`}>
