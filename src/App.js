@@ -6,8 +6,8 @@ import {
 import logo from './logo.svg';
 import './App.css';
 
-import MoviesList from './MoviesList';
-import MovieDetail from './MovieDetail';
+import MoviesList from './movieList/MoviesList';
+import MovieDetail from './movieDetail/MovieDetail';
 
 const App = () => (
   <Router>

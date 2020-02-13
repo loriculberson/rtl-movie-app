@@ -1,7 +1,7 @@
 /* eslint react/no-did-mount-set-state: 0 */
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
-import Movie from './Movie';
+import Movie from '../Movie';
 const movieAPIKey = process.env.REACT_APP_MOVIE_KEY;
 
 class MoviesList extends PureComponent {
