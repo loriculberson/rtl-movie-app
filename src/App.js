@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
-
+import MovieContext from './MovieContext'
 import MoviesList from './movieList/MoviesList';
 import MovieDetail from './movieDetail/MovieDetail';
 

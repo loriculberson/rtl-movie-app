@@ -17,7 +17,7 @@ class MoviesList extends PureComponent {
       const movies = await res.json();
       this.setState({
         movies: movies.results,
-      });
+      }, ()=> console.log(this.state.movies));
     } catch (e) {
       console.log(e);
     }
