@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
+// https://developers.themoviedb.org/3/discover/movie-discover shows you the response is in the results array
 import MoviesList from './movieList/MoviesList';
 import MovieDetail from './movieDetail/MovieDetail';
 const movieAPIKey = process.env.REACT_APP_MOVIE_KEY;
@@ -13,13 +14,13 @@ function App () {
   const [movies, setMovies] = useState([])
 
   useEffect(()=> {
+    console.log('useEffect movies')
     const fetchMovies = async () => {
       try {
         const response = await fetch(
           `https://api.themoviedb.org/3/discover/movie?api_key=${movieAPIKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`,
         );
         const movies = await response.json();
-        // https://developers.themoviedb.org/3/discover/movie-discover shows you the response is in the results array
         setMovies(movies.results)
       } catch (e) {
         console.log(e);
@@ -28,10 +29,6 @@ function App () {
     fetchMovies()
   }, [])
   useEffect(() => console.log('where movies', movies))
-
-  const movie = (id) => {
-    
-  }
 
   return (
     <Router>
