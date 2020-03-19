@@ -9,6 +9,8 @@ const POSTER_PATH = 'http://image.tmdb.org/t/p/w154';
 const BACKDROP_PATH = 'http://image.tmdb.org/t/p/w1280';
 
 class MovieDetail extends Component {
+// const Movie = ({ movie }) => {
+
   state = {
     movie: {},
   }

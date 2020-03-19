@@ -11,7 +11,7 @@ describe('New Movie', () => {
     getByText('Add New Movie!')
     expect(getByTestId('page-title').textContent).toBe('Add New Movie!')
     // expect(container.firstChild).toMatchSnapshot()
-  })
+  }) 
 
 // this happens in the child component
   it('allows user to submit a new movie name', () => {
