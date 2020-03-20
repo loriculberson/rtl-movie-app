@@ -8,26 +8,24 @@ const movieAPIKey = process.env.REACT_APP_MOVIE_KEY;
 const POSTER_PATH = 'http://image.tmdb.org/t/p/w154';
 const BACKDROP_PATH = 'http://image.tmdb.org/t/p/w1280';
 
-class MovieDetail extends Component {
-// const MovieDetail = () => {
-//NEXT STEP: pass the movie into the routeProps to avoid a second API call
-  state = { movie: {}}
-  // const []
+function MovieDetail ({match}) {
+  const [movie, setMovie] = useState({})
 
-  async componentDidMount() {
-    try {
-      const res = await fetch(`https://api.themoviedb.org/3/movie/${this.props.match.params.id}?api_key=${movieAPIKey}&language=en-US`);
-      const movie = await res.json();
-      this.setState({
-        movie,
-      });
-    } catch (e) {
-      console.log(e);
+  useEffect(()=> {
+    const fetchMovie = async () => {
+      try {
+        const res = await fetch(`https://api.themoviedb.org/3/movie/${match.params.id}?api_key=${movieAPIKey}&language=en-US`);
+        const movie = await res.json();
+        setMovie(movie)
+      } catch (e) {
+        console.log(e);
+      }
     }
-  }
+    fetchMovie()
+  },[])
 
-  render() {
-    const { movie } = this.state;
+  useEffect(() => console.log('where movie', movie))
+
 
     return (
       <MovieWrapper backdrop={`${BACKDROP_PATH}${movie.backdrop_path}`}>
@@ -44,7 +42,7 @@ class MovieDetail extends Component {
       </MovieWrapper>
     );
   }
-}
+// }
 
 export default MovieDetail;
 
