@@ -27,7 +27,7 @@ function App () {
       }
     }
     fetchMovies()
-  }, [])
+  })
   useEffect(() => console.log('where movies', movies))
 
   return (

@@ -1,5 +1,5 @@
 /* eslint react/no-did-mount-set-state: 0 */
-import React, { useState, useEffect, Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Overdrive from 'react-overdrive';
 import { Poster } from '../movie/Movie';
@@ -22,7 +22,7 @@ function MovieDetail ({match}) {
       }
     }
     fetchMovie()
-  },[])
+  })
 
   useEffect(() => console.log('where movie', movie))
 
